@@ -44,6 +44,8 @@ public class FXMLDocumentController implements Initializable {
                 txtEscuela.getText(), txtSemestre.getText());
         AlumnoDAO adao = new AlumnoDAO();
         adao.insertarAlumno(a);
+        Alumno a2=adao.buscarAlumno(2015630563);
+        System.out.println(a2.toString());
     }
 
 }

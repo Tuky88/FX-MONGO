@@ -7,6 +7,7 @@ package prueba2;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBObject;
+import org.bson.Document;
 
 /**
  *
@@ -64,9 +65,9 @@ public class Alumno {
     public String toString() {
         return "Alumno{" + "Nombre=" + Nombre + ", Boleta=" + Boleta + ", Escuela=" + Escuela + ", Semestre=" + Semestre + '}';
     }
-    public DBObject toDBOject() {
+    public Document toDocument() {
     
-        DBObject dbo=new BasicDBObject("Boleta",this.getBoleta())
+        Document dbo=new Document("Boleta",this.getBoleta())
                 .append("Nombre",this.getNombre())
                 .append("Escuela",this.getEscuela())
                 .append("Semestre",this.getSemestre());
