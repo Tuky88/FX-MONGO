@@ -28,7 +28,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label lblHora, lblFecha;
     @FXML
-    private Button btn;
+    private Button btn, btnSig;
     @FXML
     private TextField txtBoleta, txtNombre, txtEscuela, txtSemestre;
 
@@ -40,12 +40,17 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void ApretarBoton(ActionEvent e) {
+        //OBTENER LOS DATOS DE LA GUI
         Alumno a = new Alumno(txtNombre.getText(), Integer.parseInt(txtBoleta.getText()),
                 txtEscuela.getText(), txtSemestre.getText());
+        //CREAR DAO PARA CONEXIÓN
         AlumnoDAO adao = new AlumnoDAO();
         adao.insertarAlumno(a);
         Alumno a2=adao.buscarAlumno(2015630563);
         System.out.println(a2.toString());
+    }
+    private void sigEscena(ActionEvent e) {
+        
     }
 
 }
